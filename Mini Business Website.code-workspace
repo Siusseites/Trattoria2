@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Kontakt Formular mit Js"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Mini Business Website"
+	}
+}

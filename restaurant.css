@@ -1,0 +1,624 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --heading-font: 'Bodoni Moda';
+  --text-font:'Inter';
+  --beige-color: rgba(247, 245, 233, 1);
+  --red-clr:rgba(138, 13, 0, 1);
+  --brown-clr:rgb(50, 32, 17);
+  --grey-clr:rgb(65, 65, 65);
+}
+
+html{
+  scroll-behavior: smooth
+}
+
+html,body{
+  overflow-x: hidden;
+}
+
+body{
+  background-color: white;
+}
+
+.hero-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(Images/WebP/pexels-pixabay-260922.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 20px;
+}
+
+header h1{
+  color: var(--beige-color);
+  font-family: var(--heading-font);
+}
+
+nav{
+  display: flex;
+  align-items: center;
+}
+
+nav button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+@media(max-width:550px){
+  nav button{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: 50px;
+    right: 50px;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: white;
+    align-items: center;
+    width: 150px;
+  }
+
+  .links a {
+    color: black;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all 0.4s;
+  }
+
+  .links a:hover{
+    text-decoration: underline;
+    color: rgb(73, 73, 73);
+  }
+
+  .links.open{
+    display: flex;
+    
+  }
+}
+nav button img{
+  width: 30px;
+}
+
+nav a{
+  color:var(--beige-color);
+  font-family: var(--text-font);
+  margin-left: 15px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--beige-color);
+  transform: scaleX(0);
+  transform-origin: center; 
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+main{
+  margin-top: 70px;
+  color: var(--beige-color);
+  text-align: center;
+}
+
+main h1{
+  font-family:var(--heading-font) ;
+  font-size: 36px;
+}
+
+main p{
+  font-family: var(--text-font);
+  margin-bottom: 35px;
+}
+
+main button{
+  font-family: var(--text-font);
+  background-color: var(--beige-color);
+  border: none;
+  cursor: pointer;
+  padding: 7px 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgb(213, 212, 204);
+  transition: all 0.4s;
+}
+
+main button:hover{
+  background-color: rgb(88, 45, 28);
+  transform: scale(1.04);
+  color: var(--beige-color);
+  box-shadow: none;
+}
+
+main button:active{
+  background-color: rgb(144, 105, 54);
+}
+
+@media(max-width:650px){
+  .about-section{
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-section{
+    margin-bottom: 20px;
+  }
+}
+
+.about-section{
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-top: 40px;
+  justify-self: center;
+}
+
+.about-section img{
+  max-width: 300px;
+}
+
+.text-section h1{
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 42px;
+  margin-bottom: 45px;
+}
+
+.text-section h2{
+  font-family: var(--heading-font);
+  font-size: 28px;
+}
+
+.text-section p{
+  font-family: var(--text-font);
+  max-width: 450px;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  background-color: var(--beige-color);
+}
+
+menu p{
+  font-family: var(--text-font);
+}
+
+.menu h1{
+  font-family: var(--heading-font);
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.menu button{
+  border: none;
+  margin-bottom: 20px;
+  background-color: var(--brown-clr);
+  font-family:var(--text-font) ;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.4s;
+}
+
+.menu button:hover{
+  transform: scale(1.04);
+  background-color: rgb(84, 48, 22);
+}
+
+.menu button:active{
+  background-color: rgb(133, 84, 50);
+}
+
+.grid-container{
+  display: grid;
+  width: 75%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+@media(max-width:650px) {
+  .grid-container{
+    grid-template-columns: 80%;
+  }
+}
+
+.menu-card img{
+  max-width: 150px;
+}
+
+.menu-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.menu-card:hover{
+  box-shadow: 2px 2px 5px rgb(169, 169, 152);
+  padding: 10px;
+  border-radius: 15px;
+  transform: scale(1.05);
+}
+
+.dish-heading{
+  font-family: var(--text-font);
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.dish-heading + p{
+  font-family: var(--text-font);
+  color: var(--grey-clr);
+  margin-top: 5px;
+}
+
+.description{
+  font-family: var(--text-font);
+  color: var(--grey-clr);
+  margin-top: 5px;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+.team-text{
+  width: 50%;
+  background-color: rgb(40, 39, 39);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 37px;
+  position: relative;
+}
+
+.team-text > p{
+  font-family: var(--text-font);
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 45px;
+}
+
+.team-text h1{
+  font-family: var(--heading-font);
+  color: var(--beige-color);
+  max-width: 470px;
+  width: 70%;
+}
+
+.details{
+  position: absolute;
+  bottom: 45px;
+  font-family: var(--text-font);
+  color: white;
+}
+
+.details > p:first-child{
+  margin-bottom: 7px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.interior{
+  background-image: url(Images/WebP/Gemini_Generated_Image_mu7ou4mu7ou4mu7o.webp);
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.interior img{
+  position: absolute;
+  width: 220px;
+  left: -100px;
+  bottom: 0;
+}
+
+@media(max-width:650px){
+  .interior img{
+    display: none;
+  }
+
+  .team{
+    flex-direction: column;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .team-text{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .interior{
+    width: 100%;
+  }
+
+  .team-text > p{
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .details{
+    position: static;
+    margin-top: 20px;
+    max-width: 400px;
+  }
+}
+
+.location-hours{
+  margin-top: 50px;
+  width: 75%;
+  justify-self:center;
+}
+
+
+.location-hours h1{
+  font-family: var(--heading-font);
+  margin-bottom: 35px;
+}
+
+.location-group-container{
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.contact-details{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.contact-details img{
+  width: 30px;
+  margin-right: 10px;
+}
+
+.contact-details p{
+  font-family: var(--text-font);
+} 
+
+.goooglemaps-embed-container{
+  flex: 1;
+  margin-right: 30px;
+}
+
+iframe{
+  max-width: 450px;
+  width: 100%;
+}
+
+.reservation-form{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--beige-color);
+  border-radius: 15px;
+  padding-block: 30px;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-container input{
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-family: var(--text-font);
+  width: 60%;
+  max-width: 300px;
+}
+
+.form-container input.false{
+  border: 1px solid red;
+}
+
+form button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--brown-clr);
+  color: white;
+  font-family: var(--text-font);
+  margin-top: 25px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+form button:hover{
+  transform: scale(1.04);
+  background-color: rgb(84, 48, 22);
+}
+
+form button:active{
+  background-color: rgb(133, 84, 50);
+}
+
+.reservation-form h1{
+  justify-self: right;
+}
+
+@media(max-width:650px){
+  .location-hours{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+  .location-group-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reservation-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .goooglemaps-embed-container{
+    width: 100%;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.text-animation{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.text-animation.sichtbar{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-card{
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-card.sichtbarCard{
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.footer{
+  background-color: var(--grey-clr);
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 30px;
+  padding-block: 30px;
+}
+
+.footer h3{
+  font-family: var(--heading-font);
+  color: var(--beige-color);
+  font-size: 25px;
+}
+
+.container-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer img{
+  cursor: pointer;
+}
+
+.container-footer p{
+  font-family: var(--text-font);
+  color: var(--beige-color);
+  margin-top: 15px;
+}
+
+.footer-links{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a{
+  color: var(--beige-color);
+  font-family: var(--text-font);
+  margin-bottom: 7px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.footer-links a:hover{
+  text-decoration: underline;
+}
+
+.opening-hours-container p{
+  color: var(--beige-color);
+  font-family: var(--text-font);
+  margin-bottom: 7px;
+}
+
+@media(max-width:650px) {
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+  }
+}
