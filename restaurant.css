@@ -82,6 +82,7 @@ nav button{
     background-color: white;
     align-items: center;
     width: 150px;
+    z-index: 10;
   }
 
   .links a {
@@ -619,6 +620,16 @@ form button:active{
 @media(max-width:650px) {
   .footer{
     display: grid;
-    grid-template-columns: repeat(2, 200px);
+    grid-template-columns: repeat(2, 1fr);
+    align-content: top;
+    gap: 15px;
+  }
+
+  .opening-hours-container{
+    display: none;
+  }
+
+  .container-footer{
+    grid-row: span 2;
   }
 }
